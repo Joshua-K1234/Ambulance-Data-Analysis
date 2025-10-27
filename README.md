@@ -24,11 +24,11 @@ Critically, the Yorkshire Ambulance Service (YAS) recorded a significant regiona
 #### 1) Contact Volume and Call Answer time
 - Is there a correlation between the volume of contacts ($\text{A0}$) and the change in the 95th centile call answer time ($\text{A5}$), and has this correlation strengthened or weakened over time?
 
-![Question 1 Graph](./visuals/Question_1_graph.png)
+![Question 1 Graph](./visuals/Question_1.png)
 
 There is a strong correlation between the volume of calls and the 95th percentile call answer time suggests that when the system is under stress it is a lot more likely that the 95th percentile answer time will increase.
 
-![Question 1_2 Graph](./visuals/Question_1_2_graph.png)
+![Question 1_2 Graph](./visuals/Question_1_2.png)
 
 The information about the correlation and this graph shows that we should be specially aware of the winter months, in particular december since in the Year 2024 it had the peak contact amount (1.3 Million) and the second highest on the graph was December 2023 which was less (1.2 Million).
 
@@ -62,5 +62,6 @@ A possible solution could be to implement a contingency staffing and capacity pl
 
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
