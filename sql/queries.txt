@@ -1,0 +1,92 @@
+- Performance mean median and 95 and 99 percentile across time
+######################
+SELECT
+    -- Combine Year and Month into a single date for chronological charting
+    PARSE_DATE('%Y-%m-%d', CONCAT(CAST(Year AS STRING), '-', CAST(Month AS STRING), '-01')) AS Chart_Date,
+    -- Renaming to put the A-code first, and casting to FLOAT64
+    CAST(A3 AS FLOAT64) AS A3_Mean_Answer_Time,
+    CAST(A4 AS FLOAT64) AS A4_Median_Answer_Time,
+    CAST(A5 AS FLOAT64) AS A5_95th_Centile_Answer_Time,
+    CAST(A6 AS FLOAT64) AS A6_99th_Centile_Answer_Time,
+FROM
+ xxx
+WHERE
+    -- Filter for the national aggregate
+    `Org Name` = 'England'
+    -- Filter for the time constraint: Year >= 2023 and Month >= 10
+    AND (
+        Year > 2023
+        OR (Year = 2023 AND Month >= 10)
+    )
+ORDER BY
+    Chart_Date;
+
+###########################################
+-- Count of calls over time
+SELECT
+    -- Combine Year and Month into a standard DATE field (e.g., '2023-10-01')
+    -- We assume the 1st day of the month for charting purposes
+    PARSE_DATE('%Y-%m-%d', CONCAT(CAST(Year AS STRING), '-', CAST(Month AS STRING), '-01')) AS Chart_Date,
+    A0 AS Contact_Count_Demand
+FROM
+    xxx
+WHERE
+    -- Filter for the overall 'England' trend
+    `Org Name` = 'England'
+    -- Filter for the correlation analysis time constraint: Year >= 2023 and Month >= 10
+    AND (
+        Year > 2023
+        OR (Year = 2023 AND Month >= 10)
+    )
+ORDER BY
+    Chart_Date;
+####################################
+-- September 2025 performance, median and 95th percentile by service
+SELECT
+    -- Use the correct, quoted column name
+    `Org Name`,
+    -- Explicitly cast A4 and A5 to FLOAT64 to allow arithmetic operations
+    CAST(A4 AS FLOAT64) AS A4_Median_Answer_Time,
+    CAST(A5 AS FLOAT64) AS A5_95th_Centile_Answer_Time,
+FROM
+    `analysis-2025-475913.Ambulance_Data.Ambulance_Data_Sept_2017_2025`
+WHERE
+    -- Filter for the specific focus month (September 2025)
+    Year = 2025
+    AND Month = 9
+    -- Filter out the 'England' aggregate row
+    AND `Org Name` != 'England'
+    -- **NEW FILTER:** Only include rows where 'Org Name' contains "NHS"
+    AND `Org Name` LIKE '%NHS%'
+ORDER BY
+    A4 DESC;
+
+########################################
+-- Correlation between volume and 95th percentile
+SELECT
+    CAST(Year AS INT64) AS year,
+    CAST(Month AS INT64) AS month,
+    -- Creates a proper date object for time-series analysis
+    PARSE_DATE('%Y-%m', CONCAT(CAST(Year AS STRING), '-', LPAD(CAST(Month AS STRING), 2, '0'))) AS analysis_date,
+    -- A0: Total Contact Count (Demand - X-axis)
+    CAST(NULLIF(A0, '.') AS BIGNUMERIC) AS A0_Contact_Count,
+    -- A5: 95th Centile Call Answer Time (Performance - Y-axis)
+    CAST(NULLIF(A5, '.') AS BIGNUMERIC) AS A5_95th_Centile_Time
+FROM
+    `analysis-2025-475913.Ambulance_Data.Ambulance_Data_Sept_2017_2025` -- Your table path
+WHERE
+    -- 1. Filter for national aggregate data
+    `Org Name` = 'England'
+    -- 2. NEW FILTER: Selects data from October 2023 (Year 2023, Month 10) onwards
+    AND (
+        (CAST(Year AS INT64) > 2023) 
+        OR (CAST(Year AS INT64) = 2023 AND CAST(Month AS INT64) >= 10)
+    )
+    -- 3. Ensures both A0 and A5 have valid, non-missing values (not '.')
+    AND A0 IS NOT NULL
+    AND A0 <> '.'
+    AND A5 IS NOT NULL
+    AND A5 <> '.'
+ORDER BY
+    year,
+    month
