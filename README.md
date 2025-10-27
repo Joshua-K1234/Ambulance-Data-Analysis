@@ -24,23 +24,23 @@ Critically, the Yorkshire Ambulance Service (YAS) recorded a significant regiona
 #### 1) Contact Volume and Call Answer time
 - Is there a correlation between the volume of contacts ($\text{A0}$) and the change in the 95th centile call answer time ($\text{A5}$), and has this correlation strengthened or weakened over time?
 
-![Question 1 Graph](./visuals/Question_1.png)
+<img src="./visuals/Question_1.png" alt="Question 1 Graph" width="500"/>
 
 There is a strong correlation between the volume of calls and the 95th percentile call answer time suggests that when the system is under stress it is a lot more likely that the 95th percentile answer time will increase.
 
-![Question 1_2 Graph](./visuals/Question_1_2.png)
+<img src="./visuals/Question_1_2.png" alt="Question 1_2 Graph" width="500"/>
 
 The information about the correlation and this graph shows that we should be specially aware of the winter months, in particular december since in the Year 2024 it had the peak contact amount (1.3 Million) and the second highest on the graph was December 2023 which was less (1.2 Million).
 
 - Question: What is the difference between the Median ($\text{A4}$) and the 95th centile ($\text{A6}$) answer times, and how does this difference vary between trusts?
 
-![Question 2 Graph](./visuals/Question_2.png)
+<img src="./visuals/Question_2.png" alt="Question 2 Graph" width="500"/>
 
 In Sept 2025, the median call answer time was great going to a maximum of 2 and mostly 0's for each ambulance service however there is a cause of concern for Yorkshire who's 95th Percentile stands out Vididly compared to the other trusts.
 
 - Question: What is the change in the different percentiles other time for call answer time, mean and median?
 
-![Question 3 Graph](./visuals/Question_3.png)
+<img src="./visuals/Question_3.png" alt="Question 3 Graph" width="500"/>
 
 
 The national Trend for ambulance answer times has been good, it is good to see that December 2023 99th percentile which was 125 dropped to 94 in 2024. Also that the 95th Percentile in 2023 December which was 65, dropped to 43 in 2024 December.
@@ -62,6 +62,7 @@ A possible solution could be to implement a contingency staffing and capacity pl
 
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
 
