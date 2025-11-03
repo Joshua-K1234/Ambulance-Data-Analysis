@@ -38,7 +38,7 @@ The information about the correlation and this graph shows that we should be spe
 
 In Sept 2025, the median call answer time was great going to a maximum of 2 seconds and mostly 0's for each ambulance service however there is a cause of concern for Yorkshire who's 95th Percentile stands out vididly compared to the other trusts.
 
-- Question: What is the change in the different percentiles other time for call answer time, mean and median?
+- Question: What is the change in the different percentiles over time for call answer time, mean, median, 95th Percentile and 99th Percentile?
 
 <img src="./visuals/Question_3.png" alt="Question 3 Graph" width="500"/>
 
@@ -62,6 +62,7 @@ A possible solution could be to implement a contingency staffing and capacity pl
 
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
 
