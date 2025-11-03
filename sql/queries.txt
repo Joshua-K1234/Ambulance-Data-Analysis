@@ -49,7 +49,7 @@ SELECT
     CAST(A4 AS FLOAT64) AS A4_Median_Answer_Time,
     CAST(A5 AS FLOAT64) AS A5_95th_Centile_Answer_Time,
 FROM
-    `analysis-2025-475913.Ambulance_Data.Ambulance_Data_Sept_2017_2025`
+    xxx
 WHERE
     -- Filter for the specific focus month (September 2025)
     Year = 2025
@@ -73,7 +73,7 @@ SELECT
     -- A5: 95th Centile Call Answer Time (Performance - Y-axis)
     CAST(NULLIF(A5, '.') AS BIGNUMERIC) AS A5_95th_Centile_Time
 FROM
-    `analysis-2025-475913.Ambulance_Data.Ambulance_Data_Sept_2017_2025` -- Your table path
+    xxx
 WHERE
     -- 1. Filter for national aggregate data
     `Org Name` = 'England'
@@ -89,4 +89,5 @@ WHERE
     AND A5 <> '.'
 ORDER BY
     year,
+
     month
