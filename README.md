@@ -12,7 +12,7 @@ The primary goal is to provide these stakeholders with an evidence-based assessm
 #### Data Overview
 The analysis utilizes a national dataset containing call metrics (A0-A6, A114, A124-A125), stratified by individual ambulance service and region.
 
-### Critical Data Caveat: Time Series Comparability
+#### Critical Data Caveat: Time Series Comparability
 The time series analysis is limited by changes in the official data specification. Data collected before **October 2023** was subject to different measurement rules (the 20190912 specification) so I won't use it in this analysis.
 
 # Executive Summary
@@ -62,6 +62,7 @@ A possible solution could be to implement a contingency staffing and capacity pl
 
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
 
