@@ -22,7 +22,7 @@ Critically, the Yorkshire Ambulance Service (YAS) recorded a significant regiona
 
 ### Insights Deep Dive
 #### 1) Contact Volume and Call Answer time
-- Is there a correlation between the volume of contacts ($\text{A0}$) and the change in the 95th centile call answer time ($\text{A5}$), and has this correlation strengthened or weakened over time?
+- Is there a correlation between the volume of contacts ($\text{A0}$) and the change in the 95th centile call answer time ($\text{A5}$)?
 
 <img src="./visuals/Question_1.png" alt="Question 1 Graph" width="500"/>
 
@@ -62,6 +62,7 @@ A possible solution could be to implement a contingency staffing and capacity pl
 
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
 
