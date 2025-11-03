@@ -48,20 +48,20 @@ The mean answer time has shown a steady decrease over time, the median has been 
 
 #### Recommendations
 
-1) Be cautious about the winter season, particulary the month december. The data shows a correlation between increased Contact Count and Call Answer Times (95th Percentile). Increasing resources during that time period would help the NHS ambulance service have better performance at its worse.
+1) Be cautious about the winter season, particulary the month december. The data shows a correlation between increased Contact Count and Call Answer Times (95th Percentile). Increasing resources during that time period could help the NHS ambulance service have better performance at its worse season.
 
-2) Investigate Yorkshire ambulance for their 95th Percentile. Yorkshire had an extrememly high call answer time at the 95th percentile at 110 minutes. To ensure that they perform better at their worst looking at what happened during 2025 may lead to discoveries that can help prevent it from happening again.
+2) Investigate Yorkshire ambulance for their 95th Percentile. Yorkshire had an extrememly high call answer time at the 95th percentile at 110 minutes in september 2025. To ensure that they perform better at their worst looking at what happened during 2025 may lead to discoveries that can help prevent it from happening again.
 
-3) Recommendation: Conduct an in-depth root cause analysis for the months where A6 spiked. Investigate whether these peaks are correlated with:
+3) Recommendation: Conduct an in-depth root cause analysis for the months where A5 and A6 (95th and 99th Percentile) spiked. Investigate whether these peaks are correlated with:
 - Specific seasonal events (like the December festive period, as highlighted).
 - Unexpected staff shortages or surge demand.
 - System failures or infrastructure bottlenecks (e.g., IT, telephony).
 
 A possible solution could be to implement a contingency staffing and capacity plans specifically designed to "cap" the maximum wait time, aiming to keep the A6 line below a set target (e.g., 90 minutes) even during peak demand periods.
 
-
 #### Thoughts
 The dataset is huge I am sure I can add more on to this as time goes on It would be interesting if in the future I could write a program to update the database with new data when it is released as well as the visuals.
+
 
 
 
