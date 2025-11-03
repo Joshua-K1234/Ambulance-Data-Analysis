@@ -1,5 +1,5 @@
-- Performance mean median and 95 and 99 percentile across time
 ######################
+- Performance mean median and 95 and 99 percentile across time
 SELECT
     -- Combine Year and Month into a single date for chronological charting
     PARSE_DATE('%Y-%m-%d', CONCAT(CAST(Year AS STRING), '-', CAST(Month AS STRING), '-01')) AS Chart_Date,
@@ -91,3 +91,4 @@ ORDER BY
     year,
 
     month
+
